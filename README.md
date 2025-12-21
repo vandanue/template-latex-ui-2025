@@ -55,10 +55,6 @@ Template ini dapat digunakan di Overleaf. Berikut prosedur untuk menggunakannya:
 1. Download zip dari gitlab ini.
 2. Upload ke Overleaf
 
-Link di bawah ini merupakan template **Overleaf versi lama**, yaitu versi 1.03 
-
-[![Open as template in Overleaf](https://img.shields.io/badge/Overleaf-Open%20as%20template-green?style=flat-square)](https://www.overleaf.com/project/new/template/9383?id=26018259&latexEngine=pdflatex&mainFile=thesis.tex&templateName=Thesis+Template+for+Universitas+Indonesia&texImage=texlive-full%3A2021.1)
-
 #### Menggunakan Development Container
 
 [Development Container (Devcontainer)](https://containers.dev/) adalah spesifikasi yang memungkinkan pengguna untuk mempunyai lingkungan pengembangan menggunakan *container*. Terdapat dua cara untuk memanfaatkan Development Container dalam pengerjaan skripsi Anda:
