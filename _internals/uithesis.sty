@@ -85,11 +85,14 @@
 % Digunakan untuk mengatur caption dalam dokumen.
 \usepackage[font=footnotesize,format=plain,labelfont=bf,up,textfont=up,justification=centering]{caption}
 
+% Digunakan untuk membuat subfigure (> 1 gambar dalam satu tempat)
+\usepackage{subcaption}
+
 % Membantu penulisan notasi matematika terutama untuk dokumen dengan banyak
 % rumus.
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{newtxtext,newtxmath} % complete Times New Roman font
+\usepackage{amssymb}
 \usepackage{bm}
 
 % Membantu penulisan diakhir halaman
@@ -159,7 +162,7 @@
 
 % Glossary/daftar istilah support
 \usepackage{glossaries}
-\usepackage[automake]{glossaries-extra}
+\usepackage[automake, acronyms, symbols, toc, nonumberlist, nomain]{glossaries-extra}
 
 
 %-----------------------------------------------------------------------------%
@@ -571,7 +574,6 @@
 \caption[]{#1 (sambungan)\par
 	\footnotesize\textbf{Sumber:} #2\par}
 }
-
 
 
 %-----------------------------------------------------------------------------%

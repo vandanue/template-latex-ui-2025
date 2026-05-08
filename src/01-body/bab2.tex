@@ -163,6 +163,20 @@ Contoh: \code{\bslash{}captionsource\{Sesuatu\}\{\bslash{}cite\{latex:intro\}\}}
 
 \input{assets/codes/tutorial/2-sourcedFigure}
 
+Anda juga bisa memasukkan beberapa gambar dalam satu \f{figure} dengan menggunakan \f{environment} \code{\bslash{}begin\{subfigure\}}.
+Hal ini biasanya dibutuhkan ketika Anda ingin membandingkan antara dua atau lebih gambar.
+Contoh penggunaan \f{subfigure} dapat dilihat pada gambar \ref{fig:makaracomparison}, yang bisa dibuat dengan menggunakan \lst~\ref{code:latexSubfigure}.
+
+\lstinputlisting[language={[latex]tex}, caption=Contoh penggunaan subfigure, label=code:latexSubfigure]{assets/codes/tutorial/2-subfigure.tex}
+
+Kode gambar tetap diawali oleh \f{environment} \code{\bslash{}begin\{figure\}}.
+Di dalamnya, Anda bisa menambahkan \f{environment} \code{\bslash{}begin\{subfigure\}} untuk setiap gambar yang ingin dimasukkan, seperti pada baris ke-5 sampai ke-8.
+Kemudian, Anda juga bisa menambahkan \code{\bslash{}hfill} untuk memberikan jarak horizontal antar gambar, seperti pada baris ke-9.
+Pembuatan \f{caption} pada masing-masing gambar dilakukan di dalam \code{subfigure} (baris 7 dan baris 14), sedangkan \f{caption} yang menaungi semua gambar tersebut,
+di bagian bawah pada \code{figure} (baris 17).
+
+\input{assets/codes/tutorial/2-subfigure}
+
 
 %-----------------------------------------------------------------------------%
 \section{Membuat Tabel}
@@ -353,6 +367,63 @@ Terdapat beberapa perintah yang digunakan untuk menyusun \equ~\ref{equ:bola}, ya
 
 Suatu persamaan yang dibuat menggunakan \f{environment} \code{align} akan secara otomatis memiliki indeks (nomor) dari persamaan.
 Perintah \code{align} ini juga dapat digunakan untuk menulis lebih dari satu persamaan.
+
+
+%-----------------------------------------------------------------------------%
+\subsection{Persamaan yang Kompleks}
+\label{sec:complexEqu}
+% Hal baru di template 2017
+%-----------------------------------------------------------------------------%
+Mulai dari versi 2.2.2, \f{template} ini menggunakan \f{library} \code{amssymb} untuk support terhadap perintah simbol-simbol matematis tambahan. Hal ini diharapkan berguna untuk karya ilmiah tingkat lanjut seperti disertasi. Berikut disertakan pula contoh-contoh persamaan kompleks yang digunakan untuk menguji kemampuan menuliskan persamaan matematis di \f{template} ini. Contoh-contoh terlampir merupakan hasil percakapan penyusun menggunakan bahasa Inggris dengan agen kecerdasan buatan (\f{artificial intelligence}) GitHub Copilot model Claude 3.7 Sonnet Thinking.
+
+\equ~\ref{equ:relativisticBoltzmannTransport} merupakan persamaan transportasi relativistik Boltzmann. Persamaan ini didapatkan dari buku \cite{book:cercignani2002boltzmann}. Persamaan ini mendeskripsikan perilaku statistik dari sistem termodinamika yang tidak dalam keadaan ekuilibrium, yang dicetuskan oleh Ludwig Boltzmaan di tahun 1872 \citep{book:encyclopediaOfPhysics}. Persamaan ini penting untuk memodelkan perilaku plasma dalam kondisi ekstrem, seperti dalam reaktor fusi, interior bintang, dan piringan akresi di sekitar lubang hitam. Persamaan ini memperluas teori kinetik klasik ke rezim relativistik di mana kecepatan partikel mendekati kecepatan cahaya.
+
+\input{assets/codes/tutorial/2-complexEquationBoltzmann.tex}
+
+Berikut adalah rincian dari \equ~\ref{equ:relativisticBoltzmannTransport} menurut GitHub Copilot dengan model Claude 3.7 Sonnet Thinking:
+
+\begin{tabular}{| p{14cm} |}
+	\hline\begin{itemize}
+		\item $f = f(\vec{x},\vec{v},t)$ is the distribution function
+		\item $\vec{v}$ is the velocity vector
+		\item $\vec{F}$ represents external forces
+		\item The right-hand side represents collision effects through the collision integral
+		\item $\sigma(\Omega)$ is the differential cross-section for collisions
+		\item Primed quantities refer to post-collision states
+	\end{itemize} \\
+	\hline
+\end{tabular}
+
+Kode untuk mewujudkan \equ~\ref{equ:relativisticBoltzmannTransport} bisa dilihat di \lst~\ref{code:complexEquationBoltzmann}.
+
+\lstinputlisting[language={[latex]tex}, caption=Kode pembuatan \equ~\ref{equ:relativisticBoltzmannTransport}, label=code:complexEquationBoltzmann]{assets/codes/tutorial/2-complexEquationBoltzmann.tex}
+
+\equ~\ref{equ:SheinanMcMillanBreimanTheorem} merupakan teorema Shannon-McMillan-Breiman. Persamaan ini didapatkan dari buku \cite{book:walters1982ergodic}. Teorema ini merupakan dasar dari teori informasi dan sistem dinamis. Teorema ini menetapkan bahwa untuk hampir semua titik dalam sistem, informasi yang didapatkan dari observasi yang di-\f{refine} terus menerus akan menyatu dengan tingkat entropi. Secara praktis, teorema ini menghubungkan konsep entropi yang merupakan konsep abstrak dengan gagasan konkret tentang batas kompresi data.
+
+\input{assets/codes/tutorial/2-complexEquationErgodic.tex}
+
+Berikut adalah rincian dari \equ~\ref{equ:SheinanMcMillanBreimanTheorem} menurut GitHub Copilot dengan model Claude 3.7 Sonnet Thinking:
+
+\begin{tabular}{| p{14cm} |}
+	\hline
+	Where:
+	\begin{itemize}
+		\item $A_n(x)$ is the atom containing point $x$ in the refined partition $\bigvee_{i=0}^{n-1}T^{-i}\mathcal{P}$
+		\item The refined partition is defined using the join operator: $\bigvee_{i=0}^{n-1}T^{-i}\mathcal{P}$
+	\end{itemize} \\
+	This theorem establishes a fundamental connection between information theory and dynamical systems. Here's what it means:
+	\begin{itemize}
+		\item \bo{Measure Space}: We have a probability space $(X, \mathcal{B}, \mu)$ with a measure-preserving transformation $T$.
+		\item \bo{Partitioning}: We start with a finite measurable partition $\mathcal{P}$ of the space $X$.
+		\item \bo{Refinement}: The key symbol $\bigvee_{i=0}^{n-1}T^{-i}\mathcal{P}$ represents the join (finest common refinement) of the partitions $\mathcal{P}, T^{-1}\mathcal{P}, T^{-2}\mathcal{P}, ..., T^{-(n-1)}\mathcal{P}$. This creates increasingly refined ways of observing the system.
+		\item \bo{Information Rate}: As $n$ approaches infinity, the negative logarithm of the measure of the atom containing $x$, divided by $n$, converges to the measure-theoretic entropy $h_{\mu}(T,\mathcal{P})$ for almost every point $x$.
+	\end{itemize} \\
+	\hline
+\end{tabular}
+
+Kode untuk mewujudkan \equ~\ref{equ:SheinanMcMillanBreimanTheorem} bisa dilihat di \lst~\ref{code:complexEquationErgodic}.
+
+\lstinputlisting[language={[latex]tex}, caption=Kode pembuatan \equ~\ref{equ:SheinanMcMillanBreimanTheorem}, label=code:complexEquationErgodic]{assets/codes/tutorial/2-complexEquationErgodic.tex}
 
 
 %-----------------------------------------------------------------------------%
