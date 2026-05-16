@@ -16,6 +16,7 @@
 *.synctex.gz
 *.toc
 *.xdv
+test*
 
 # Latexmk
 latexmk
