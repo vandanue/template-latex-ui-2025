@@ -1,23 +1,49 @@
-**/*.aux
-**/*.acn
-**/*.acr
-**/*.alg
-**/*.glg
-**/*.gls
-**/*.bbl
-**/*.blg
-**/*.glo
-**/*.ist
-**/*.loe
-**/*.lof
-**/*.log
-**/*.lol
-**/*.lot
-**/*.lox
-**/*.out
-**/*.toc
-**/*.synctex.gz
-**/*.synctex(busy)
-**/*.fdb_latexmk
-**/*.fls
-thesis.pdf
+.gitignore
+# Latex build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.fmt
+*.fot
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Latexmk
+latexmk
+
+# Generated PDFs
+*.pdf
+
+# Exception: keep included asset pdfs
+!assets/pdfs/include.pdf
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*~
+*.bak
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+
+# Linux
+.DS_Store
+Thumbs.db
+
+# Python cache if you use scripts
+__pycache__/
+*.pyc
