@@ -21,6 +21,7 @@
 *.synctex.gz
 *.toc
 *.xdv
+annora*
 test*
 
 # Latexmk
